@@ -40,7 +40,7 @@ setup(
 	package_data={'pycorpora': ['data/*/*.json', 'data/*/*/*.json']},
 	author="Allison Parrish",
 	author_email="allison@decontextualize.com",
-	description="A Python wrapper for Darius Kazemi's corpora",
+	description="A Python wrapper for Darius Kazemi's Corpora Project",
 	url="https://github.com/aparrish/pycorpora",
 	license="LICENSE.txt",
 	long_description=open("README.rst").read(),
