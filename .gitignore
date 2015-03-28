@@ -2,3 +2,5 @@ venv/
 *.pyc
 *.swp
 dist/
+*.egg-info
+MANIFEST
