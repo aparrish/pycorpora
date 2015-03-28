@@ -44,5 +44,15 @@ setup(
 	url="https://github.com/aparrish/pycorpora",
 	license="LICENSE.txt",
 	long_description=open("README.rst").read(),
+	keywords="nlp corpus text language",
+	classifiers=[
+		"Development Status :: 3 - Alpha",
+		"Intended Audience :: Developers",
+		"Intended Audience :: Education",
+		"Intended Audience :: Science/Research",
+		"License :: OSI Approved :: MIT License",
+		"Natural Language :: English",
+		"Topic :: Artistic Software",
+		"Topic :: Scientific/Engineering :: Artificial Intelligence"],
 	cmdclass={'install': DownloadAndInstall},
 )
