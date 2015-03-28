@@ -4,6 +4,8 @@ from pkg_resources import resource_stream, resource_exists, resource_isdir, \
 import json
 import re
 
+__version__ = '0.1.1'
+
 cache = dict()
 def fetch_resource(name):
 	if name not in cache:

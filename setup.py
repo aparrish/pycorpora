@@ -35,7 +35,7 @@ class DownloadAndInstall(install):
 
 setup(
 	name="pycorpora",
-	version="0.1.0",
+	version="0.1.1",
 	packages=['pycorpora'],
 	package_data={'pycorpora': ['data/*/*.json', 'data/*/*/*.json']},
 	author="Allison Parrish",
