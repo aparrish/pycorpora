@@ -1,5 +1,9 @@
-from distutils.core import setup
-from distutils.command.install import install
+try:
+	from setuptools import setup
+	from setuptools.command.install import install
+except ImportError:
+	from distutils.core import setup
+	from distutils.command.install import install
 from distutils.dir_util import mkpath, copy_tree
 import io, urllib2, zipfile, glob
 
@@ -31,11 +35,14 @@ class DownloadAndInstall(install):
 
 setup(
 	name="pycorpora",
-	version="0.1",
+	version="0.1.0",
 	packages=['pycorpora'],
-	package_data={'pycorpora': ['data/*/*.json']},
+	package_data={'pycorpora': ['data/*/*.json', 'data/*/*/*.json']},
 	author="Allison Parrish",
 	author_email="allison@decontextualize.com",
 	description="A Python wrapper for Darius Kazemi's corpora",
+	url="https://github.com/aparrish/pycorpora",
+	license="LICENSE.txt",
+	long_description=open("README.rst").read(),
 	cmdclass={'install': DownloadAndInstall},
 )
