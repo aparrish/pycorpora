@@ -83,6 +83,15 @@ class TestPyCorpora(unittest.TestCase):
 		subdata = pycorpora.pycorpora_test.subdir.get_file('another_test')
 		self.assertEqual(type(data), dict)
 		self.assertEqual(data['tests'], ["one", "two", "three"])
+	
+	def test_cache(self):
+		import pycorpora
+		self.assertNotIn('data/pycorpora_test/test.json', pycorpora.cache)
+		data = pycorpora.get_file('pycorpora_test', 'test')
+		self.assertIn('data/pycorpora_test/test.json', pycorpora.cache)
+		data = pycorpora.pycorpora_test.subdir.another_test
+		self.assertIn('data/pycorpora_test/subdir/another_test.json',
+				pycorpora.cache)
 
 if __name__ == '__main__':
 	unittest.main()

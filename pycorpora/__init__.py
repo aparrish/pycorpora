@@ -4,6 +4,12 @@ from pkg_resources import resource_stream, resource_exists, resource_isdir, \
 import json
 import re
 
+cache = dict()
+def fetch_resource(name):
+	if name not in cache:
+		cache[name] = json.load(resource_stream(__name__, name))
+	return cache[name]
+
 def get_categories(category=None):
 	if category is None:
 		return resource_listdir(__name__, "data")
@@ -18,8 +24,7 @@ def get_files(category):
 			if not resource_isdir(__name__, "data/" + category + "/" + item)]
 
 def get_file(*components):
-	return json.load(resource_stream(
-			__name__, "/".join(["data"] + list(components)) + ".json"))
+	return fetch_resource("/".join(["data"] + list(components)) + ".json")
 
 class CorpusLoader(object):
 	def __init__(self, directory):
@@ -30,7 +35,7 @@ class CorpusLoader(object):
 		file_loc = "data/" + self.directory + "/" + attr + ".json"
 		dir_loc = "data/" + self.directory + "/" + attr
 		if resource_exists(__name__, file_loc):
-			return json.load(resource_stream(__name__, file_loc))
+			return fetch_resource(file_loc)
 		elif resource_exists(__name__, dir_loc) and \
 				resource_isdir(__name__, dir_loc):
 			return CorpusLoader(self.directory + "/" + attr)
