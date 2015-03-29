@@ -1,8 +1,8 @@
 language: python
 
 python:
-  - "pypy"
-  - "pypy3"
+  - pypy
+  - pypy3
   - 2.7
   - 3.4
   - 2.6
@@ -35,3 +35,9 @@ after_success:
 
 matrix:
   fast_finish: true
+  allow_failures:
+    - python: pypy3
+    - python: 3.2
+    - python: 3.3
+    - python: 3.4
+
