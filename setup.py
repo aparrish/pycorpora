@@ -1,3 +1,4 @@
+from __future__ import print_function
 try:
 	from setuptools import setup
 	from setuptools.command.install import install
@@ -19,7 +20,7 @@ class DownloadAndInstall(install):
 		if self.corpora_zip_url is None:
 			self.corpora_zip_url = \
 				"https://github.com/dariusk/corpora/archive/master.zip"
-		print "Installing corpora data from " + self.corpora_zip_url
+		print("Installing corpora data from " + self.corpora_zip_url)
 		mkpath("./corpora-download")
 		resp = urllib2.urlopen(self.corpora_zip_url).read()
 		remote = io.BytesIO(resp)
