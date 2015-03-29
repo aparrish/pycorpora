@@ -12,7 +12,8 @@ python:
 sudo: false
 
 install:
-  - "travis_retry python setup.py install"
+  - travis_retry python setup.py install
+  - travis_retry pip install coveralls
 
 script:
   - coverage run --include=pycorpora/* tests/test_pycorpora.py
@@ -20,7 +21,6 @@ script:
 after_success:
     # Report coverage and send to coveralls.io
   - coverage report
-  - travis_retry pip install coveralls
   - coveralls
 
     # Static analysis
