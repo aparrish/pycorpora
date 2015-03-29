@@ -1,4 +1,7 @@
-import unittest
+try:
+    import unittest2 as unittest
+except ImportError:
+    import unittest
 
 class TestPyCorpora(unittest.TestCase):
 
@@ -83,7 +86,7 @@ class TestPyCorpora(unittest.TestCase):
 		subdata = pycorpora.pycorpora_test.subdir.get_file('another_test')
 		self.assertEqual(type(data), dict)
 		self.assertEqual(data['tests'], ["one", "two", "three"])
-	
+
 	def test_cache(self):
 		import pycorpora
 		self.assertNotIn('data/pycorpora_test/test.json', pycorpora.cache)
