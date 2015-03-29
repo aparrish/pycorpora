@@ -5,8 +5,15 @@ try:
 except ImportError:
 	from distutils.core import setup
 	from distutils.command.install import install
+try:
+    # For Python 3.0 and later
+    from urllib.request import urlopen
+except ImportError:
+    # Fall back to Python 2's urllib2
+    from urllib2 import urlopen
 from distutils.dir_util import mkpath, copy_tree
-import io, urllib2, zipfile, glob
+import io, zipfile, glob
+
 
 class DownloadAndInstall(install):
 	user_options = install.user_options + [
@@ -22,7 +29,7 @@ class DownloadAndInstall(install):
 				"https://github.com/dariusk/corpora/archive/master.zip"
 		print("Installing corpora data from " + self.corpora_zip_url)
 		mkpath("./corpora-download")
-		resp = urllib2.urlopen(self.corpora_zip_url).read()
+		resp = urlopen(self.corpora_zip_url).read()
 		remote = io.BytesIO(resp)
 		zf = zipfile.ZipFile(remote, "r")
 		zf.extractall("corpora-download")
