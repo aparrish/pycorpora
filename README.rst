@@ -1,6 +1,9 @@
 pycorpora
 =========
 
+.. image:: https://travis-ci.org/aparrish/pycorpora.svg?branch=master
+    :target: https://travis-ci.org/aparrish/pycorpora
+
 A simple Python interface for Darius Kazemi's `Corpora Project
 <https://github.com/dariusk/corpora>`_, "a collection of static corpora
 (plural of 'corpus') that are potentially useful in the creation of weird
@@ -17,7 +20,7 @@ Corpora Project in your program. Here's an example of how it works::
     print random.choice(pycorpora.words.literature.shakespeare_words['words'])
 
 `Allison Parrish <http://www.decontextualize.com/>`_ created the ``pycorpora`` 
-interface. The source code for the package is `on GitHub
+interface. Python 3 is not yet supported. The source code for the package is `on GitHub
 <https://github.com/aparrish/pycorpora>`_. Contributions are welcome!
 
 Installation
@@ -48,6 +51,13 @@ methods above::
 (The intention of ``--corpora-zip-url`` is to let you install Corpora Project
 data from a particular branch, commit or fork, so that changes to the bleeding
 edge of the project don't break your code.)
+
+Update
+------
+
+Update Corpora Project data by reinstalling with pip:
+
+    pip install --upgrade --force-reinstall pycorpora
 
 Usage
 -----
