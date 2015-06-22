@@ -11,7 +11,8 @@ cache = dict()
 
 def fetch_resource(name):
     if name not in cache:
-        cache[name] = json.load(resource_stream(__name__, name))
+        cache[name] = json.loads(resource_stream(__name__,
+            name).read().decode('utf-8'))
     return cache[name]
 
 
