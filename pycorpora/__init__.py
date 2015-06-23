@@ -4,7 +4,7 @@ from pkg_resources import resource_stream, resource_exists, resource_isdir, \
 import json
 import re
 
-__version__ = '0.1.1'
+__version__ = '0.1.2'
 
 cache = dict()
 

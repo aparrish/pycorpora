@@ -192,6 +192,12 @@ Automated pizza topping-related boasts about your inebriation::
 
 The possibilities... are endless.
 
+History
+-------
+
+* 0.1.2: Python 3 compatibility (contributed by Sam Raker); vastly improved
+  build process (contributed by Hugo van Kemenade).
+
 License
 -------
 
