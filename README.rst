@@ -19,8 +19,8 @@ Corpora Project in your program. Here's an example of how it works::
     # print a random word coined by Shakespeare
     print random.choice(pycorpora.words.literature.shakespeare_words['words'])
 
-`Allison Parrish <http://www.decontextualize.com/>`_ created the ``pycorpora`` 
-interface. Python 3 is not yet supported. The source code for the package is `on GitHub
+`Allison Parrish <http://www.decontextualize.com/>`_ created the ``pycorpora``
+interface. The source code for the package is `on GitHub
 <https://github.com/aparrish/pycorpora>`_. Contributions are welcome!
 
 Installation
