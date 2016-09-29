@@ -64,4 +64,4 @@ class CorpusLoader(object):
 
 module = sys.modules[__name__]
 for directory in resource_listdir(__name__, "data"):
-    setattr(module, directory, CorpusLoader(directory))
+    setattr(module, directory.replace("-","_"), CorpusLoader(directory))

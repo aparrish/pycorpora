@@ -9,11 +9,16 @@ class TestPyCorpora(unittest.TestCase):
     def test_import(self):
         import pycorpora
         self.assertTrue(hasattr(pycorpora, 'pycorpora_test'))
+        self.assertTrue(hasattr(pycorpora, 'hyphenated_dirname'))
 
     def test_load_corpus(self):
         import pycorpora
         self.assertEqual(type(pycorpora.pycorpora_test.test), dict)
         self.assertEqual(pycorpora.pycorpora_test.test['tests'],
+                         ["one", "two", "three"])
+
+        self.assertEqual(type(pycorpora.hyphenated_dirname.test), dict)
+        self.assertEqual(pycorpora.hyphenated_dirname.test['tests'],
                          ["one", "two", "three"])
 
     def test_subdir(self):
