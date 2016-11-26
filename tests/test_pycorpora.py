@@ -107,5 +107,6 @@ class TestPyCorpora(unittest.TestCase):
         self.assertIn('data/pycorpora_test/subdir/another_test.json',
                       pycorpora.cache)
 
+
 if __name__ == '__main__':
     unittest.main()
