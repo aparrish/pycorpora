@@ -11,8 +11,8 @@ cache = dict()
 
 def fetch_resource(name):
     if name not in cache:
-        cache[name] = json.loads(resource_stream(__name__,
-            name).read().decode('utf-8'))
+        cache[name] = json.loads(resource_stream(
+            __name__, name).read().decode('utf-8'))
     return cache[name]
 
 
@@ -62,6 +62,7 @@ class CorpusLoader(object):
     def get_file(self, *components):
         return get_file(self.directory, *components)
 
+
 module = sys.modules[__name__]
 for directory in resource_listdir(__name__, "data"):
-    setattr(module, directory.replace("-","_"), CorpusLoader(directory))
+    setattr(module, directory.replace("-", "_"), CorpusLoader(directory))

@@ -46,6 +46,7 @@ class DownloadAndInstall(install):
         copy_tree(data_dir, "pycorpora/data")
         install.run(self)
 
+
 setup(
     name="pycorpora",
     version="0.1.2",
