@@ -32,7 +32,7 @@ Installation by hand::
 
 Installation with pip::
 
-    pip install pycorpora
+    pip install --no-cache-dir pycorpora
 
 The package does not include data from the Corpora Project; instead, the data
 is downloaded when the package is installed (using either of the methods
@@ -55,7 +55,7 @@ edge of the project don't break your code.)
 Update
 ------
 
-Update Corpora Project data by reinstalling with pip:
+Update Corpora Project data by reinstalling with pip::
 
     pip install --upgrade --force-reinstall pycorpora
 
