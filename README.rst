@@ -42,11 +42,11 @@ data. You can specify an alternative URL to download the data from using the
 argument ``--corpora-zip-url`` on the command line with either of the two
 methods above::
 
-    python setup.py install --corpora-zip-url=http://example.com/corpora.zip
+    python setup.py install --corpora-zip-url=https://github.com/dariusk/corpora/archive/master.zip
 
 ... or, with ``pip``::
 
-    pip install pycorpora --install-option="--corpora-zip-url=http://example.com/corpora.zip"
+    pip install pycorpora --install-option="--corpora-zip-url=https://github.com/dariusk/corpora/archive/master.zip"
 
 (The intention of ``--corpora-zip-url`` is to let you install Corpora Project
 data from a particular branch, commit or fork, so that changes to the bleeding
