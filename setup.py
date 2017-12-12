@@ -59,6 +59,7 @@ setup(
     license="LICENSE.txt",
     long_description=open("README.rst").read(),
     keywords="nlp corpus text language",
+    python_requires=">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*",
     classifiers=[
         "Development Status :: 3 - Alpha",
         "Intended Audience :: Developers",
