@@ -60,3 +60,5 @@ target/
 corpora-download/
 pycorpora/data/
 
+# IDE
+.idea
