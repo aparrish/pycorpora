@@ -1,14 +1,18 @@
 language: python
-
-python:
-  - pypy3
-  - pypy
-  - 3.6
-  - 3.5
-  - 3.4
-  - 2.7
-
 sudo: false
+
+matrix:
+  fast_finish: true
+  include:
+    - python: pypy3
+    - python: pypy
+    - python: 3.7
+      dist: xenial
+      sudo: true
+    - python: 3.6
+    - python: 3.5
+    - python: 3.4
+    - python: 2.7
 
 install:
   - travis_retry pip install coverage
@@ -30,7 +34,3 @@ after_success:
   - pyflakes *.py           | tee >(wc -l)
   - pyflakes pycorpora/*.py | tee >(wc -l)
   - pyflakes tests/*.py     | tee >(wc -l)
-
-
-matrix:
-  fast_finish: true
