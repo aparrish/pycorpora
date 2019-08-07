@@ -1,5 +1,4 @@
 language: python
-sudo: false
 
 matrix:
   fast_finish: true
@@ -8,7 +7,6 @@ matrix:
     - python: pypy
     - python: 3.7
       dist: xenial
-      sudo: true
     - python: 3.6
     - python: 3.5
     - python: 3.4
