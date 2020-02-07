@@ -15,6 +15,7 @@ from distutils.dir_util import mkpath, copy_tree
 import glob
 import io
 import zipfile
+import os
 
 
 class DownloadAndInstall(install):
@@ -30,8 +31,10 @@ class DownloadAndInstall(install):
 
     def run(self):
         if self.corpora_zip_url is None:
-            self.corpora_zip_url = \
-                "https://github.com/dariusk/corpora/archive/master.zip"
+            self.corpora_zip_url = os.environ.get(
+                "CORPORA_ZIP_URL",
+                "https://github.com/dariusk/corpora/archive/master.zip",
+            )
         print("Installing corpora data from " + self.corpora_zip_url)
         mkpath("./corpora-download")
         resp = urlopen(self.corpora_zip_url).read()

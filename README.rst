@@ -48,9 +48,15 @@ methods above::
 
     pip install pycorpora --install-option="--corpora-zip-url=https://github.com/dariusk/corpora/archive/master.zip"
 
+Alternatively, the ``CORPORA_ZIP_URL`` environment variable can be used for the
+same purpose (if both are set, the command line option will take precedence)::
+
+    env CORPORA_ZIP_URL=https://github.com/dariusk/corpora/archive/master.zip pip install pycorpora
+
 (The intention of ``--corpora-zip-url`` is to let you install Corpora Project
 data from a particular branch, commit or fork, so that changes to the bleeding
-edge of the project don't break your code.)
+edge of the project don't break your code. Also, a ``file://`` URL can be used
+for a local/vendored zip file.)
 
 Update
 ------
